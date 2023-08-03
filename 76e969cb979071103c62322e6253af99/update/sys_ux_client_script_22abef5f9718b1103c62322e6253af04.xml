@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes>a1dcc9e7b77c3010e69dbc16de11a93b,3eccb12bb7703010e69dbc16de11a9a1</includes>
+        <macroponent display_value="SOW Overview">d39beb5f9718b1103c62322e6253af90</macroponent>
+        <name>UpdateCurrentVizSelection</name>
+        <preset/>
+        <required_translations>[ {
+  "code" : "",
+  "message" : "Incident SLA time remaining - {0}",
+  "comment" : ""
+} ]</required_translations>
+        <script><![CDATA[/**
+ * @param {params} params
+ * @param {api} params.api
+ * @param {any} params.event
+ * @param {any} params.imports
+ * @param {ApiHelpers} params.helpers
+ */
+async function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+    var currentVizSelection = {};
+    var previousVizSelection = api.state.previousVizSelection;
+    var teamsMode = false;
+    
+    var serviceDeskUtils = imports['sn_sow_inc.SowIncidentLandingPageUtils']();
+    var sowUtils = imports['sn_sow.SowUtils']();
+
+    if(event.payload){
+        teamsMode = (event.payload.value[0] == 'team_work');
+    }
+    if(!previousVizSelection.elementId){
+        var evamData = serviceDeskUtils.getVisualisationCardData();
+        if (teamsMode) {
+            currentVizSelection.title = evamData['view_all_inc_assigned_group']['label'];
+            currentVizSelection.queryForViewAllRecordCount = currentVizSelection.query = evamData['view_all_inc_assigned_group']['viewAllQuery'];
+        } else {
+            currentVizSelection.title = evamData['view_all_inc_assigned']['label'];
+            currentVizSelection.queryForViewAllRecordCount = currentVizSelection.query = evamData['view_all_inc_assigned']['viewAllQuery'];
+        }
+        currentVizSelection.tableForViewAllRecordCount = currentVizSelection.table = "incident";
+        currentVizSelection.element = "incident_assigned";
+        currentVizSelection.evamId = serviceDeskUtils.getEvamDef().incidentEvamDefinitionId;
+    } else{
+        if(previousVizSelection.elementId.startsWith('view_all'))
+            currentVizSelection = serviceDeskUtils.fetchSelectionForViewAll(previousVizSelection,teamsMode);
+        else{
+            var nameValueMap = sowUtils.getNameValueMap(previousVizSelection.query);
+            previousVizSelection.query = serviceDeskUtils.getVisualisationCardQuery(previousVizSelection,teamsMode,nameValueMap);
+            currentVizSelection = serviceDeskUtils.fetchSelectionForDonut(nameValueMap, previousVizSelection, teamsMode, api.state.reportRanges);
+        }
+    }
+
+    if(!currentVizSelection.isReportRangeTitle && currentVizSelection.element == "incident_slas") {
+        currentVizSelection.title = await helpers.translate("Incident SLA time remaining - {0}",currentVizSelection.title);
+    } else {
+        currentVizSelection.title = api.state.translations[currentVizSelection.title];
+    }
+    
+    api.setState('groupMode',teamsMode);
+    api.setState("currentVizSelection", currentVizSelection);
+
+    var jsonObj = [];
+    if (api.state.parFilters.length == 0) {
+        jsonObj.push({
+            "order": 100,
+            "type": "boolean",
+            "apply_to": ["incident.active"],
+            "values": ["true"]
+        });
+    }
+    api.setState('parFilters', () => jsonObj);
+    api.setState('pageCursor', () => 'init');
+    api.setState('pageNumber', () => 0);
+    api.setState('listRefreshRequested', {
+        timestamp: new Date().getTime()
+    });
+    api.data.get_datetime_now.refresh();
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:02:06</sys_created_on>
+        <sys_id>22abef5f9718b1103c62322e6253af04</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>UpdateCurrentVizSelection</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_client_script_22abef5f9718b1103c62322e6253af04</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:09:40</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

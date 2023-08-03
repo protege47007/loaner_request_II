@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes>27cf37e1097c4510f8771350f7e25cf9</includes>
+        <macroponent display_value="SOW landing page header SNC">ee7bef1f9718b1103c62322e6253af41</macroponent>
+        <name>FormMessage</name>
+        <preset/>
+        <required_translations/>
+        <script><![CDATA[/**
+* @param {params} params
+ * @param {api} params.api
+ * @param {any} params.event
+ * @param {any} params.imports
+ * @param {ApiHelpers} params.helpers
+ */
+async function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+    const perfHeaderUtils = imports['sn_sow_inc.SowPerfHeaderUtils']();
+    let positiveMsgs = [];
+    positiveMsgs.push(await helpers.translate('Great work!'));
+    positiveMsgs.push(await helpers.translate('You are awesome!'));
+    positiveMsgs.push(await helpers.translate('Keep up the good work!'));
+    let kpiDetails;
+    if(api.data.get_kpi_details_for_user.output && api.data.get_kpi_details_for_user.output.kpiTargets)
+        kpiDetails = api.data.get_kpi_details_for_user.output.kpiTargets.kpiDetails;
+    if(!kpiDetails)
+        return;
+    const rows = api.data.get_agent_kpi_scores.output.result.rows;
+    const scores = perfHeaderUtils.getScoresForUser(rows, api.context.session.user.sys_id);
+    const validPerfMetrics = perfHeaderUtils.getPerfMetricsExceedingTarget(kpiDetails, scores);
+    let validPerfMetricsList = [];
+    for (let x in validPerfMetrics)
+        validPerfMetricsList.push(x);
+    if (validPerfMetricsList.length === 0)
+        return;
+    let kpiChosen = validPerfMetricsList[Math.floor(Math.random() * validPerfMetricsList.length)];
+    let perfMetricMsg;
+    switch (kpiChosen) {
+        case 'Quality':
+            perfMetricMsg = await helpers.translate('Your quality score is at {0}.', validPerfMetrics['Quality']);
+            break;
+        case 'Average Customer Satisfaction':
+            perfMetricMsg = await helpers.translate('Your customer satisfaction score is at {0}.', validPerfMetrics['Average Customer Satisfaction']);
+            break;
+        case 'First call resolution':
+            perfMetricMsg = await helpers.translate('Your first call resolution is at {0}.', validPerfMetrics['First call resolution']);
+            break;
+        case 'Closed Incidents':
+            perfMetricMsg = await helpers.translate('You have closed {0} incidents in this week.', validPerfMetrics['Closed Incidents']);
+            break;
+        case 'Average Handle Time':
+            perfMetricMsg = await helpers.translate('Your average handle time is at {0}.', validPerfMetrics['Average Handle Time']);
+     }
+    let metricText = perfMetricMsg + ' ' + positiveMsgs[Math.floor(Math.random() * positiveMsgs.length)];
+    api.setState('metricText', metricText);
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:01:21</sys_created_on>
+        <sys_id>db7b235f9718b1103c62322e6253af5f</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>FormMessage</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_client_script_db7b235f9718b1103c62322e6253af5f</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:01:21</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes/>
+        <macroponent display_value="Service desk landing page SNC recent">da7bab1f9718b1103c62322e6253af3b</macroponent>
+        <name>Load WFO Content</name>
+        <preset/>
+        <required_translations/>
+        <script><![CDATA[/**
+* @param {params} params
+* @param {api} params.api
+* @param {any} params.event
+* @param {any} params.imports
+* @param {ApiHelpers} params.helpers
+*/
+function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+    const showPerformanceTarget = api.data.wfo_team_performance_plugin_status.output &&
+                            api.data.wfo_team_performance_plugin_status.output.active;
+    const showlearningPath = api.data.wfo_learning_plugin_status.output && 
+                            api.data.wfo_learning_plugin_status.output.active;
+
+    if (showPerformanceTarget) {
+        api.setState("showPerformanceTarget", showPerformanceTarget);
+        api.emit('MACROPONENT_VIEWPORT_LOAD_REQUESTED', {
+            viewportElementId: 'viewport_nwr',
+            route: 'performance-target',
+            fields: null,
+            params: null
+        });
+    }
+
+    if (showlearningPath) {
+        api.setState("showLearningPath", showlearningPath);
+        api.emit('MACROPONENT_VIEWPORT_LOAD_REQUESTED', {
+            viewportElementId: 'viewport_lyb',
+            route: 'learning-path-widget',
+            fields: null,
+            params: null
+        });
+    }
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:01:17</sys_created_on>
+        <sys_id>e27baf1f9718b1103c62322e6253afe8</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Load WFO Content</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_client_script_e27baf1f9718b1103c62322e6253afe8</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:01:17</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

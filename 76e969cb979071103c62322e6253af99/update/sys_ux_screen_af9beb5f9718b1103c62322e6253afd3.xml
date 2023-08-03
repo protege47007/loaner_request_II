@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update sys_domain="global" table="sys_ux_screen">
+    <sys_ux_screen action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <app_config display_value="Service Operations Workspace">4d69d0ed73c4301045216238edf6a7ea</app_config>
+        <description/>
+        <event_mappings>[ {
+  "eventMappingId" : "clkttbbddlffaajjzaaddffhhtozeeccfrva",
+  "isConfiguration" : false,
+  "offRowStorageId" : null,
+  "sourceEventApiName" : "x_1102749_loaner_r.NOW_UXF_PAGE#ADD_NOTIFICATIONS_RELAY_d39beb5f9718b1103c62322e6253af90",
+  "sourceEventCorrelationId" : null,
+  "sourceEventDefinition" : {
+    "apiName" : "x_1102749_loaner_r.NOW_UXF_PAGE#ADD_NOTIFICATIONS_RELAY_d39beb5f9718b1103c62322e6253af90",
+    "id" : null,
+    "type" : "UXEVENT"
+  },
+  "sourceEventSysId" : null,
+  "targets" : [ {
+    "broker" : null,
+    "clientScript" : null,
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : {
+      "apiName" : "sn_sow_inc.NOW_UXF_PAGE#ADD_NOTIFICATIONS",
+      "payload" : {
+        "type" : "JSON_LITERAL",
+        "value" : { }
+      },
+      "sysId" : "0c9056b4c7323010d7e818b1c7c26059"
+    },
+    "operation" : null,
+    "targetId" : "clkttbbddleeaajjyzddffhhtsxaaegxvx",
+    "type" : "EVENT"
+  } ]
+}, {
+  "eventMappingId" : "clksbnrfraachhbbddffhhtggigugtqg",
+  "isConfiguration" : false,
+  "offRowStorageId" : null,
+  "sourceEventApiName" : "sn_sow.NOW_UXF_PAGE#ADD_NOTIFICATIONS_RELAY_1dc69247975471103c62322e6253affd",
+  "sourceEventCorrelationId" : null,
+  "sourceEventDefinition" : {
+    "apiName" : "sn_sow.NOW_UXF_PAGE#ADD_NOTIFICATIONS_RELAY_1dc69247975471103c62322e6253affd",
+    "id" : null,
+    "type" : "UXEVENT"
+  },
+  "sourceEventSysId" : null,
+  "targets" : [ {
+    "broker" : null,
+    "clientScript" : null,
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : {
+      "apiName" : "sn_sow_inc.NOW_UXF_PAGE#ADD_NOTIFICATIONS",
+      "payload" : {
+        "type" : "JSON_LITERAL",
+        "value" : { }
+      },
+      "sysId" : "0c9056b4c7323010d7e818b1c7c26059"
+    },
+    "operation" : null,
+    "targetId" : "clksbnrfraachhaaddffhhttjjgggobmn",
+    "type" : "EVENT"
+  } ]
+}, {
+  "eventMappingId" : "cktvdtyhhnaaaabbdddghhsbkginjjiiv",
+  "isConfiguration" : false,
+  "offRowStorageId" : null,
+  "sourceEventApiName" : "sn_sow_inc.NOW_UXF_PAGE#ADD_NOTIFICATIONS_RELAY_99b1e428c7323010d7e818b1c7c260b6",
+  "sourceEventCorrelationId" : null,
+  "sourceEventDefinition" : {
+    "apiName" : "sn_sow_inc.NOW_UXF_PAGE#ADD_NOTIFICATIONS_RELAY_99b1e428c7323010d7e818b1c7c260b6",
+    "id" : null,
+    "type" : "UXEVENT"
+  },
+  "sourceEventSysId" : null,
+  "targets" : [ {
+    "broker" : null,
+    "clientScript" : null,
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : {
+      "apiName" : "sn_uxf_page.NOW_UXF_PAGE#ADD_NOTIFICATIONS",
+      "payload" : {
+        "type" : "MAP_CONTAINER",
+        "container" : {
+          "items" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "items" ]
+            }
+          }
+        }
+      },
+      "sysId" : "49fe7d575f983bb3f8eea3fa8d40694c"
+    },
+    "operation" : null,
+    "targetId" : "cktvdtyhhnaaaabbcddghhsfmhiinnsaa",
+    "type" : "EVENT"
+  } ]
+}, {
+  "eventMappingId" : "ckttsshbbjjaaaabboddghhsvhjiimgvq",
+  "isConfiguration" : false,
+  "offRowStorageId" : null,
+  "sourceEventApiName" : "sn_sow_inc.NAV_ITEM_SELECTED_RELAY_99b1e428c7323010d7e818b1c7c260b6",
+  "sourceEventCorrelationId" : null,
+  "sourceEventDefinition" : {
+    "apiName" : "sn_sow_inc.NAV_ITEM_SELECTED_RELAY_99b1e428c7323010d7e818b1c7c260b6",
+    "id" : null,
+    "type" : "UXEVENT"
+  },
+  "sourceEventSysId" : null,
+  "targets" : [ {
+    "broker" : null,
+    "clientScript" : null,
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : {
+      "apiName" : "sn_canvas_core.NAV_ITEM_SELECTED",
+      "payload" : {
+        "type" : "MAP_CONTAINER",
+        "container" : {
+          "route" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "route" ]
+            }
+          },
+          "fields" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "fields" ]
+            }
+          },
+          "params" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "params" ]
+            }
+          },
+          "redirect" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "redirect" ]
+            }
+          },
+          "passiveNavigation" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "passiveNavigation" ]
+            }
+          },
+          "title" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "title" ]
+            }
+          },
+          "multiInstField" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "multiInstField" ]
+            }
+          },
+          "targetRoute" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "targetRoute" ]
+            }
+          },
+          "external" : {
+            "type" : "EVENT_PAYLOAD_BINDING",
+            "binding" : {
+              "address" : [ "external" ]
+            }
+          }
+        }
+      },
+      "sysId" : "8b82bf18e5276c8e423b6e4e0889b463"
+    },
+    "operation" : null,
+    "targetId" : "ckttsshbbjjaaaabbnddghhsggjddprwaabb",
+    "type" : "EVENT"
+  } ]
+} ]</event_mappings>
+        <macroponent display_value="SOW Overview">d39beb5f9718b1103c62322e6253af90</macroponent>
+        <macroponent_config>{
+  "label" : {
+    "type" : "TRANSLATION_LITERAL",
+    "value" : {
+      "code" : null,
+      "message" : "",
+      "comment" : ""
+    }
+  },
+  "bare" : {
+    "type" : "JSON_LITERAL",
+    "value" : true
+  },
+  "scrollable" : {
+    "type" : "JSON_LITERAL",
+    "value" : "y"
+  },
+  "headerLevel" : {
+    "type" : "JSON_LITERAL",
+    "value" : "1"
+  },
+  "headingOnlyVisibleToScreenReaders" : {
+    "type" : "JSON_LITERAL",
+    "value" : false
+  },
+  "interceptNotifications" : {
+    "type" : "JSON_LITERAL",
+    "value" : false
+  },
+  "propagateNotifications" : {
+    "type" : "JSON_LITERAL",
+    "value" : true
+  }
+}</macroponent_config>
+        <name>Service desk landing page overview SNC_Copy_by_Dave</name>
+        <order>100</order>
+        <parent_macroponent display_value="Service desk landing page SNC recent">da7bab1f9718b1103c62322e6253af3b</parent_macroponent>
+        <required_translations>[ ]</required_translations>
+        <rollback_screen/>
+        <screen_condition/>
+        <screen_type display_value="Overview">d79beb5f9718b1103c62322e6253af7d</screen_type>
+        <sys_class_name>sys_ux_screen</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:01:54</sys_created_on>
+        <sys_domain>global</sys_domain>
+        <sys_domain_path>/</sys_domain_path>
+        <sys_id>af9beb5f9718b1103c62322e6253afd3</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Service desk landing page overview SNC_Copy_by_Dave</sys_name>
+        <sys_overrides/>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_screen_af9beb5f9718b1103c62322e6253afd3</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:10:35</sys_updated_on>
+    </sys_ux_screen>
+    <sys_translated_text action="delete_multiple" query="documentkey=af9beb5f9718b1103c62322e6253afd3"/>
+</record_update>

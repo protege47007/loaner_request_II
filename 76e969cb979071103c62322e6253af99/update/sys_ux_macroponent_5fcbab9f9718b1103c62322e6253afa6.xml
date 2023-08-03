@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
+    <sys_ux_macroponent action="INSERT_OR_UPDATE">
+        <associated_types/>
+        <category>page</category>
+        <component_dependencies/>
+        <composition>[ {
+  "elementId" : "heading_1",
+  "elementLabel" : "Heading 1",
+  "propertyValues" : {
+    "hasNoMargin" : {
+      "type" : "JSON_LITERAL",
+      "value" : true
+    },
+    "level" : {
+      "type" : "JSON_LITERAL",
+      "value" : "1"
+    },
+    "variant" : {
+      "type" : "JSON_LITERAL",
+      "value" : "header-secondary"
+    },
+    "wontWrap" : {
+      "type" : "JSON_LITERAL",
+      "value" : true
+    },
+    "label" : {
+      "type" : "TRANSLATION_LITERAL",
+      "value" : {
+        "code" : null,
+        "message" : "Announcements",
+        "comment" : ""
+      }
+    }
+  },
+  "eventMappings" : [ ],
+  "slot" : null,
+  "definition" : {
+    "id" : "1f6e0643eca7a637e36bd7833549ec9e",
+    "type" : "MACROPONENT"
+  },
+  "overrides" : null,
+  "isHidden" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  },
+  "isHero" : false,
+  "extensionPoints" : [ ],
+  "isNonDestructive" : false,
+  "items" : [ ],
+  "styles" : {
+    "margin-bottom" : "15px"
+  }
+}, {
+  "elementId" : "announcements_data_set",
+  "elementLabel" : "Announcements - Data set",
+  "propertyValues" : {
+    "hidePaginationControls" : {
+      "type" : "JSON_LITERAL",
+      "value" : false
+    },
+    "data" : {
+      "type" : "STATE_BINDING",
+      "binding" : {
+        "address" : [ "announcementsData" ]
+      }
+    },
+    "minCardWidth" : {
+      "type" : "JSON_LITERAL",
+      "value" : 150
+    },
+    "toggleView" : {
+      "type" : "JSON_LITERAL",
+      "value" : false
+    },
+    "daClientActionContract" : {
+      "type" : "JSON_LITERAL",
+      "value" : null
+    },
+    "title" : {
+      "type" : "JSON_LITERAL",
+      "value" : ""
+    },
+    "cardHeight" : {
+      "type" : "JSON_LITERAL",
+      "value" : "lg"
+    },
+    "maxCardsPerRow" : {
+      "type" : "JSON_LITERAL",
+      "value" : "1"
+    },
+    "emptyMessage" : {
+      "type" : "JSON_LITERAL",
+      "value" : "No content to display"
+    },
+    "defaultView" : {
+      "type" : "JSON_LITERAL",
+      "value" : "grid"
+    },
+    "dataBrokerIsLoading" : {
+      "type" : "STATE_BINDING",
+      "binding" : {
+        "address" : [ "announcementsDataSetLoading" ]
+      }
+    },
+    "titleStyleVariant" : {
+      "type" : "JSON_LITERAL",
+      "value" : "header-tertiary"
+    },
+    "hideFilter" : {
+      "type" : "JSON_LITERAL",
+      "value" : true
+    },
+    "titleHeadingLevel" : {
+      "type" : "JSON_LITERAL",
+      "value" : "1"
+    }
+  },
+  "eventMappings" : [ {
+    "eventMappingId" : "ckwuyudacaabbeebddeggwccrpeeuoih",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "now_data_set.NOW_DATA_SET#PAGINATION_BUTTON_CLICKED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "now_data_set.NOW_DATA_SET#PAGINATION_BUTTON_CLICKED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuyudacaabbeecddeggwyleueepon",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  } ],
+  "slot" : null,
+  "definition" : {
+    "id" : "dec0b89ec87f44e66126f8cc78e53891",
+    "type" : "MACROPONENT"
+  },
+  "overrides" : null,
+  "isHidden" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  },
+  "isHero" : false,
+  "extensionPoints" : [ ],
+  "isNonDestructive" : false,
+  "items" : [ ],
+  "styles" : {
+    "height" : "100%",
+    "width" : "100%",
+    "min-height" : "300px",
+    "padding-bottom" : "24px"
+  }
+} ]</composition>
+        <da_relay_models/>
+        <data>[ {
+  "definition" : {
+    "id" : "e6af35d9dbb810106b3982c9689619e5",
+    "type" : "COMPOSITE"
+  },
+  "dependencies" : { },
+  "elementId" : "announcements_evam_data_resource",
+  "elementLabel" : "Announcements - EVAM Data Resource",
+  "eventMappings" : [ {
+    "eventMappingId" : "ckwuywjddraabbeemddeggwsjnqhucaa",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_FAILED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_FAILED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuywjddraabbeenddeggwtvyxxjjhf",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  }, {
+    "eventMappingId" : "ckwuyvoiiiaabbeejddeggwjjggybbdeerjj",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_INITIATED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_INITIATED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuyvoiiiaabbeekddeggwowufrsaacc",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  }, {
+    "eventMappingId" : "ckwuxffhhpccaaeebkddeggwaaglbbuexff",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_SUCCEEDED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_SUCCEEDED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuywcjfaabbeelddeggwryezcsjjz",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  } ],
+  "inputValues" : {
+    "evamDefinitionId" : {
+      "type" : "JSON_LITERAL",
+      "value" : "bb194caac3023010965e070e9140dd50"
+    },
+    "pageCursor" : {
+      "type" : "STATE_BINDING",
+      "binding" : {
+        "address" : [ "announcementsPageCursor" ]
+      }
+    },
+    "pageSize" : {
+      "type" : "JSON_LITERAL",
+      "value" : "1"
+    },
+    "pageNumber" : {
+      "type" : "STATE_BINDING",
+      "binding" : {
+        "address" : [ "announcementsPageNumber" ]
+      }
+    },
+    "filterPreference" : {
+      "type" : "JSON_LITERAL",
+      "value" : ""
+    }
+  },
+  "readEvaluationMode" : "EXPLICIT"
+}, {
+  "definition" : {
+    "id" : "0eaf28eec3423010965e070e9140dd6b",
+    "type" : "TRANSFORM"
+  },
+  "dependencies" : { },
+  "elementId" : "announcements_evam_transform",
+  "elementLabel" : "Announcements - EVAM Transform",
+  "eventMappings" : [ {
+    "eventMappingId" : "ckwuzddzddsaabbffmddeggwreiijqddee",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_FAILED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_FAILED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuzddzddsaabbffnddeggwddyqegfyc",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  }, {
+    "eventMappingId" : "ckwuzddtuoaabbffkddeggwvmfccrrddl",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_SUCCEEDED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_SUCCEEDED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuzddtupaabbfflddeggwvtztudtr",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  }, {
+    "eventMappingId" : "ckwuzddgvhhaabbffiddeggweerblugffp",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_INITIATED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_INITIATED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : {
+        "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+      },
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : null,
+      "operation" : null,
+      "targetId" : "ckwuzddgvhhaabbffjddeggwhgsoaarus",
+      "type" : "CLIENT_SCRIPT"
+    } ]
+  } ],
+  "inputValues" : {
+    "configuration" : {
+      "type" : "STATE_BINDING",
+      "binding" : {
+        "address" : [ "announcementsConfig" ]
+      }
+    },
+    "evamOutput" : {
+      "type" : "DATA_OUTPUT_BINDING",
+      "binding" : {
+        "address" : [ "announcements_evam_data_resource", "compositeDataViews" ]
+      }
+    }
+  },
+  "readEvaluationMode" : "EAGER"
+} ]</data>
+        <description/>
+        <dispatched_events>f251f10553500110b662ddeeff7b1259</dispatched_events>
+        <ext_controller_dep/>
+        <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
+        <handled_events>ba70d45d53d00110b662ddeeff7b12d7</handled_events>
+        <interactions/>
+        <interfaces/>
+        <internal_event_mappings>{
+  "sn_sow.ANNOUNCEMENT_EVAM_ACTION" : [ {
+    "broker" : null,
+    "clientScript" : {
+      "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+    },
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : null,
+    "operation" : null,
+    "targetId" : "ckwvmddseedaabbcckddeggztiiqhiijjlff",
+    "type" : "CLIENT_SCRIPT"
+  } ],
+  "MACROPONENT_READY" : [ {
+    "broker" : null,
+    "clientScript" : {
+      "sysId" : "ebcbab9f9718b1103c62322e6253aff3"
+    },
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : null,
+    "operation" : null,
+    "targetId" : "ckwuzffmmeeaabbffxddeggwddqaakolpjj",
+    "type" : "CLIENT_SCRIPT"
+  } ]
+}</internal_event_mappings>
+        <layout>{
+  "default" : {
+    "children" : null,
+    "isInline" : null,
+    "items" : [{"element_id":"data_set_1","styles":{}},{"element_id":"heading_1","styles":{}},{"element_id":"container_1","styles":{}},{"element_id":"announcements_data_set","styles":{}}],
+    "root" : null,
+    "rules" : null,
+    "styles" : {"flex-direction":"column","display":"flex"},
+    "templateId" : "5832fd4d53c31010e6bcddeeff7b12db",
+    "type" : "flex"
+  },
+  "version" : "3.0.0"
+}</layout>
+        <macroponent_dependencies/>
+        <name>Announcement SNC</name>
+        <output_prop_mapping/>
+        <props>[ ]</props>
+        <required_translations>[ {
+  "message" : "Announcements",
+  "comment" : ""
+} ]</required_translations>
+        <root_component/>
+        <root_component_config>{ }</root_component_config>
+        <root_component_definition/>
+        <schema_version>1.0.0</schema_version>
+        <state_properties>[ {
+  "name" : "announcementsPageNumber",
+  "label" : "announcementsPageNumber",
+  "fieldType" : "number",
+  "valueType" : "number",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : 0
+  }
+}, {
+  "name" : "announcementsPageCursor",
+  "label" : "announcementsPageCursor",
+  "fieldType" : "",
+  "valueType" : "",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  }
+}, {
+  "name" : "announcementsData",
+  "label" : "announcementsData",
+  "fieldType" : "json",
+  "valueType" : "json",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  }
+}, {
+  "name" : "announcementsConfig",
+  "label" : "announcementsConfig",
+  "fieldType" : "json",
+  "valueType" : "json",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  }
+}, {
+  "name" : "announcementsDataSetLoading",
+  "label" : "announcementsDataSetLoading",
+  "fieldType" : "boolean",
+  "valueType" : "boolean",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : true
+  }
+} ]</state_properties>
+        <sys_class_name>sys_ux_macroponent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:02:43</sys_created_on>
+        <sys_id>5fcbab9f9718b1103c62322e6253afa6</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Announcement SNC</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_macroponent_5fcbab9f9718b1103c62322e6253afa6</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:02:43</sys_updated_on>
+    </sys_ux_macroponent>
+    <sys_translated_text action="delete_multiple" query="documentkey=5fcbab9f9718b1103c62322e6253afa6"/>
+</record_update>

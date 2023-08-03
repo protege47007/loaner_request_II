@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes/>
+        <macroponent display_value="Recently viewed SNC">c39bab5f9718b1103c62322e6253afef</macroponent>
+        <name>Set history list</name>
+        <preset/>
+        <required_translations/>
+        <script><![CDATA[/**
+* @param {params} params
+* @param {api} params.api
+* @param {any} params.event
+* @param {any} params.imports
+* @param {ApiHelpers} params.helpers
+*/
+async function handler({api, event, helpers, imports}) {
+    let index = 0;
+    const normalizedHistory =  [];
+    const dedup = new Set();
+
+    const createPrettyTime = async (timestamp) => {
+        const elapsedTime = Date.now() - timestamp;
+        const timeMarker = Math.max(
+            1,
+            Math.floor(elapsedTime / (60000))
+        );
+        if(timeMarker < 60)
+            return await helpers.translate("{0} min ago", timeMarker);
+        else if(timeMarker >= 60 && timeMarker < 1440)
+            return await helpers.translate("{0} hr ago", Math.floor(timeMarker / 60));
+        else {
+            const days = Math.floor(timeMarker / 1440);
+            if(days > 1) {
+                return await helpers.translate("{0} days ago", days);
+            }
+            return await helpers.translate("yesterday");
+        }
+    };
+
+    const menus = api.data.landing_page_menu_getter.output.result;
+    if  (menus && menus.length)  { 
+        const history = menus.find(({ label }) =>  label === 'History');
+        if (history && history.subItems && history.subItems.length) { 
+            const filteredHistory = history.subItems;
+            while (normalizedHistory.length < 5 && index < filteredHistory.length) {                     
+                const label = filteredHistory[index].label;
+                const description = filteredHistory[index].description ? `- ${filteredHistory[index].description}` : "";     
+                if(!dedup.has(`${label} ${description}`)) {
+                    normalizedHistory.push({
+                        label: `${label} ${description} (${await createPrettyTime(filteredHistory[index].createdTimestamp)})`, 
+                        type: filteredHistory[index].route.url ? 'external' : 'route',
+                        value: {...filteredHistory[index].route, href: `/${filteredHistory[index].route.url}`},
+                        opensWindow: false,
+                    });
+                    dedup.add(`${label} ${description}`);
+                }
+                index++;
+            }
+            api.setState('historyList', normalizedHistory);
+        }
+    }
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:01:52</sys_created_on>
+        <sys_id>c39beb5f9718b1103c62322e6253af26</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Set history list</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_client_script_c39beb5f9718b1103c62322e6253af26</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:01:52</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

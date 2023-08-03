@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_client_script">
+    <sys_ux_client_script action="INSERT_OR_UPDATE">
+        <includes/>
+        <macroponent display_value="Announcement SNC">5fcbab9f9718b1103c62322e6253afa6</macroponent>
+        <name>Announcements Event Handler</name>
+        <preset/>
+        <required_translations/>
+        <script><![CDATA[/**
+ * @param {params} params
+ * @param {api} params.api
+ * @param {any} params.event
+ * @param {any} params.imports
+ * @param {ApiHelpers} params.helpers
+ */
+function handler({
+    api,
+    event,
+    helpers,
+    imports
+}) {
+    const processActionPayloads = function(item, actions) {
+        const fields = item.propValues.fields;
+        if (item && actions && fields) {
+            for (let i in actions) {
+                const action = actions[i];
+                if(action) {
+                    const payload = action.actionPayload;
+                    const actionName = action.name;
+                    if ("sow_announcement_open_banner_link" == actionName) {
+                        payload.url = fields.link_url.value;
+                    } else if ('sow_announcement_open_outage_task' == actionName) {
+                        const taskClassName = item.propValues.task_sys_class_name;
+                        const taskTable = taskClassName ? taskClassName : 'task';
+                        payload.table = taskTable,
+                        payload.sysId = fields.task_number.value;
+                        payload.sys_id = fields.task_number.value;
+                    }
+                }
+            }
+        }
+    };
+    const eventName = event.name;
+    const elementId = event.elementId;
+    const debug = api.context.url;
+
+    if ('MACROPONENT_READY' == eventName) {
+        const config = api.context.app.announcementsConfig;
+        if (config && (typeof config === 'string')) {
+            api.setState('announcementsConfig', JSON.parse(config));
+        }
+        api.data.announcements_evam_data_resource.refresh();
+    } else if ("announcements_data_set" === elementId && "NOW_DATA_SET#PAGINATION_BUTTON_CLICKED" === eventName) {
+        if (event.payload.pageCursor) {
+            api.setState('announcementsPageCursor', () => event.payload.pageCursor);
+        }
+        if (event.payload.pageNumber) {
+            api.setState('announcementsPageNumber', () => event.payload.pageNumber);
+        }
+    } else if ("announcements_evam_transform" === elementId) {
+        if ("DATA_FETCH_SUCCEEDED" === eventName) {
+            const payload = api.data.announcements_evam_transform.output;
+            // Because EVAM seems to only return display values we need to substitute the corrrect payloads in
+            // for the actions if present
+            if (payload) {
+                const items = payload.items;
+                if (items) {
+                    for (let i in items) {
+                        const item = items[0];
+                        processActionPayloads(item, item.propValues.mainActions);
+                        processActionPayloads(item, item.propValues.overflowActions);
+                        processActionPayloads(item, [item.propValues.clickAction]);
+                    }
+                }
+                console.debug(payload);
+                api.setState('announcementsData', payload);
+                const showAnnouncements = payload && payload.items && payload.items.length > 0;
+                api.emit('SHOW_ANNOUNCEMENT',{'value': showAnnouncements});
+            }
+            api.setState('announcementsDataSetLoading', false);
+        } else {
+            api.setState('announcementsDataSetLoading', true);
+        }
+    } else if ("announcements_evam_data_resource" === elementId) {
+        if ("DATA_FETCH_SUCCEEDED" === eventName) {
+            api.setState('announcementsDataSetLoading', false);
+        } else {
+            api.setState('announcementsDataSetLoading', true);
+        }
+    } else if ("ANNOUNCEMENT_EVAM_ACTION" === eventName && event && event.payload) {
+        const table = event.payload.table;
+        const sysId = event.payload.sys_id;
+        const url = event.payload.url;
+        const data = api.state.announcementsData;
+        const route = 'sys_ux_banner_announcement' === table ? url : 'record';
+        const fields = 'sys_ux_banner_announcement' === table ? null : {
+            table: table,
+            sysId: sysId
+        };
+        let nav = null;
+        if (route) {
+            nav = {};
+            if (route.startsWith("http")) {
+                nav.external = {
+                    url: route
+                }
+            } else {
+                nav.route = route;
+                if (fields) {
+                    nav.fields = fields;
+                }
+            }
+        }
+        if (nav) {
+            api.emit('NAV_ITEM_SELECTED', nav);
+        } else {
+            console.error("Unable to genrate navigation event", event);
+        }
+    }
+}]]></script>
+        <script_api_version>2.0.0</script_api_version>
+        <sys_class_name>sys_ux_client_script</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:02:44</sys_created_on>
+        <sys_id>6bcbeb9f9718b1103c62322e6253af10</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>Announcements Event Handler</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_client_script_6bcbeb9f9718b1103c62322e6253af10</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:02:44</sys_updated_on>
+        <target>macroponent</target>
+        <type>default</type>
+    </sys_ux_client_script>
+</record_update>

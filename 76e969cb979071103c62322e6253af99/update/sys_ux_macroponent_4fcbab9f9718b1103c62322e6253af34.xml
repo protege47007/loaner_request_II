@@ -1,0 +1,921 @@
+<?xml version="1.0" encoding="UTF-8"?><record_update table="sys_ux_macroponent">
+    <sys_ux_macroponent action="INSERT_OR_UPDATE">
+        <associated_types/>
+        <category>page</category>
+        <component_dependencies/>
+        <composition>[ {
+  "elementId" : "container_1",
+  "elementLabel" : "Header",
+  "propertyValues" : {
+    "ariaRegionHeadingLevel" : {
+      "type" : "JSON_LITERAL",
+      "value" : "1"
+    },
+    "ariaRegionName" : {
+      "type" : "TRANSLATION_LITERAL",
+      "value" : {
+        "code" : null,
+        "message" : "",
+        "comment" : ""
+      }
+    },
+    "includeAriaHeading" : {
+      "type" : "JSON_LITERAL",
+      "value" : false
+    },
+    "type" : {
+      "type" : "JSON_LITERAL",
+      "value" : "section"
+    },
+    "ariaRole" : {
+      "type" : "JSON_LITERAL",
+      "value" : ""
+    }
+  },
+  "eventMappings" : [ ],
+  "slot" : null,
+  "definition" : {
+    "id" : "d356d14b6e293a3020a244b63d278d8f",
+    "type" : "MACROPONENT"
+  },
+  "overrides" : {
+    "composition" : [ {
+      "elementId" : "heading_1",
+      "elementLabel" : "Upcoming - Heading",
+      "propertyValues" : {
+        "hasNoMargin" : {
+          "type" : "JSON_LITERAL",
+          "value" : true
+        },
+        "level" : {
+          "type" : "JSON_LITERAL",
+          "value" : "2"
+        },
+        "variant" : {
+          "type" : "JSON_LITERAL",
+          "value" : "header-secondary"
+        },
+        "wontWrap" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "label" : {
+          "type" : "TRANSLATION_LITERAL",
+          "value" : {
+            "code" : null,
+            "message" : "Upcoming",
+            "comment" : ""
+          }
+        }
+      },
+      "eventMappings" : [ ],
+      "slot" : null,
+      "definition" : {
+        "id" : "1f6e0643eca7a637e36bd7833549ec9e",
+        "type" : "MACROPONENT"
+      },
+      "overrides" : null,
+      "isHidden" : {
+        "type" : "JSON_LITERAL",
+        "value" : null
+      },
+      "isHero" : false,
+      "extensionPoints" : [ ],
+      "isNonDestructive" : false,
+      "items" : [ ],
+      "styles" : {
+        "flex-grow" : "1"
+      }
+    }, {
+      "elementId" : "button_iconic_1",
+      "elementLabel" : "Button iconic 1",
+      "propertyValues" : {
+        "size" : {
+          "type" : "JSON_LITERAL",
+          "value" : "md"
+        },
+        "highContrast" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "icon" : {
+          "type" : "JSON_LITERAL",
+          "value" : "sync-fill"
+        },
+        "variant" : {
+          "type" : "JSON_LITERAL",
+          "value" : "tertiary"
+        },
+        "disabled" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "tooltipContent" : {
+          "type" : "TRANSLATION_LITERAL",
+          "value" : {
+            "code" : null,
+            "message" : "Refresh upcoming tasks",
+            "comment" : ""
+          }
+        },
+        "bare" : {
+          "type" : "JSON_LITERAL",
+          "value" : true
+        },
+        "configAria" : {
+          "type" : "MAP_CONTAINER",
+          "container" : {
+            "aria-label" : {
+              "type" : "TRANSLATION_LITERAL",
+              "value" : {
+                "code" : null,
+                "message" : "Refresh upcoming tasks",
+                "comment" : ""
+              }
+            }
+          }
+        },
+        "hidePadding" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        }
+      },
+      "eventMappings" : [ {
+        "eventMappingId" : "ckwqeccbbcxaabbajjddeggzyddsthhfah",
+        "isConfiguration" : false,
+        "offRowStorageId" : null,
+        "sourceEventApiName" : "sn_button.NOW_BUTTON_ICONIC#CLICKED",
+        "sourceEventCorrelationId" : null,
+        "sourceEventDefinition" : {
+          "apiName" : "sn_button.NOW_BUTTON_ICONIC#CLICKED",
+          "id" : null,
+          "type" : "UXEVENT"
+        },
+        "sourceEventSysId" : null,
+        "targets" : [ {
+          "broker" : null,
+          "clientScript" : null,
+          "conditional" : null,
+          "declarativeAction" : null,
+          "event" : null,
+          "operation" : {
+            "dataBrokerId" : "99d5067eb7e23010965e56bf7e11a97d",
+            "operationName" : "REFRESH",
+            "parentResourceId" : "upcoming_links_data_resource_today",
+            "payload" : {
+              "type" : "JSON_LITERAL",
+              "value" : { }
+            }
+          },
+          "targetId" : "ckwqeccbbcxaabbaaddeggzpjjgggkbbjjm",
+          "type" : "DATABROKER_OP"
+        }, {
+          "broker" : null,
+          "clientScript" : null,
+          "conditional" : null,
+          "declarativeAction" : null,
+          "event" : null,
+          "operation" : {
+            "dataBrokerId" : "99d5067eb7e23010965e56bf7e11a97d",
+            "operationName" : "REFRESH",
+            "parentResourceId" : "upcoming_links_data_resource_tomorrow",
+            "payload" : {
+              "type" : "JSON_LITERAL",
+              "value" : { }
+            }
+          },
+          "targetId" : "ckwqecchhqxaabbabddeggztncggweehhbb",
+          "type" : "DATABROKER_OP"
+        } ]
+      } ],
+      "slot" : null,
+      "definition" : {
+        "id" : "844d56291d91b330f2269558e3f47701",
+        "type" : "MACROPONENT"
+      },
+      "overrides" : null,
+      "isHidden" : {
+        "type" : "JSON_LITERAL",
+        "value" : null
+      },
+      "isHero" : false,
+      "extensionPoints" : [ ],
+      "isNonDestructive" : false,
+      "items" : [ ],
+      "styles" : { }
+    } ],
+    "layout" : {
+      "default" : {
+        "children" : null,
+        "isInline" : null,
+        "items" : [{"element_id":"heading_1","styles":{}},{"element_id":"button_iconic_1","styles":{}}],
+        "root" : null,
+        "rules" : null,
+        "styles" : {"flex-direction":"row","display":"flex","justify-content":"flex-start","align-items":"center","margin":"0px 0px 15px 0px"},
+        "templateId" : "5832fd4d53c31010e6bcddeeff7b12db",
+        "type" : "flex"
+      },
+      "version" : "3.0.0"
+    }
+  },
+  "isHidden" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  },
+  "isHero" : false,
+  "extensionPoints" : [ ],
+  "isNonDestructive" : false,
+  "items" : [ ],
+  "styles" : {
+    "width" : "100%"
+  }
+}, {
+  "elementId" : "viewport_cns",
+  "elementLabel" : "Upcoming - Tabs",
+  "propertyValues" : {
+    "viewportConfiguration" : {
+      "type" : "JSON_LITERAL",
+      "value" : {
+        "validation" : {
+          "name" : {
+            "required" : true
+          },
+          "order" : {
+            "required" : false
+          },
+          "icon" : {
+            "required" : false
+          }
+        },
+        "enableDataDrivenTabs" : true
+      }
+    },
+    "fixedWidth" : {
+      "type" : "JSON_LITERAL",
+      "value" : true
+    },
+    "size" : {
+      "type" : "JSON_LITERAL",
+      "value" : "md"
+    },
+    "defaultRoute" : null,
+    "selectedTabIndex" : {
+      "type" : "JSON_LITERAL",
+      "value" : null
+    },
+    "items" : {
+      "type" : "LIST_CONTAINER",
+      "container" : [ {
+        "type" : "MAP_CONTAINER",
+        "container" : {
+          "id" : {
+            "type" : "JSON_LITERAL",
+            "value" : "ckwqci29405ok3e6z2x2p3i0k"
+          },
+          "label" : {
+            "type" : "TRANSLATION_LITERAL",
+            "value" : {
+              "code" : null,
+              "message" : "Today",
+              "comment" : ""
+            }
+          },
+          "type" : {
+            "type" : "JSON_LITERAL",
+            "value" : "local"
+          },
+          "icon" : {
+            "type" : "JSON_LITERAL",
+            "value" : ""
+          },
+          "order" : {
+            "type" : "JSON_LITERAL",
+            "value" : 0
+          }
+        }
+      }, {
+        "type" : "MAP_CONTAINER",
+        "container" : {
+          "id" : {
+            "type" : "JSON_LITERAL",
+            "value" : "ckwqcj81305on3e6z0n0oi3ax"
+          },
+          "label" : {
+            "type" : "TRANSLATION_LITERAL",
+            "value" : {
+              "code" : null,
+              "message" : "Tomorrow",
+              "comment" : ""
+            }
+          },
+          "type" : {
+            "type" : "JSON_LITERAL",
+            "value" : "local"
+          },
+          "icon" : {
+            "type" : "JSON_LITERAL",
+            "value" : ""
+          },
+          "order" : {
+            "type" : "JSON_LITERAL",
+            "value" : 100
+          }
+        }
+      } ]
+    },
+    "dynamicTabData" : {
+      "type" : "JSON_LITERAL",
+      "value" : null
+    },
+    "maxWidth" : {
+      "type" : "JSON_LITERAL",
+      "value" : null
+    },
+    "hideLabel" : {
+      "type" : "JSON_LITERAL",
+      "value" : null
+    }
+  },
+  "eventMappings" : [ ],
+  "slot" : null,
+  "definition" : {
+    "id" : "b324da974cef96f2db1d484cfeda4e3e",
+    "type" : "MACROPONENT_VIEWPORT"
+  },
+  "overrides" : {
+    "composition" : [ {
+      "elementId" : "ckwqcicccaaaaffomddeggzccaffqjriiw",
+      "elementLabel" : "Today",
+      "propertyValues" : {
+        "ariaRegionHeadingLevel" : {
+          "type" : "JSON_LITERAL",
+          "value" : "1"
+        },
+        "ariaRegionName" : {
+          "type" : "TRANSLATION_LITERAL",
+          "value" : {
+            "code" : null,
+            "message" : "",
+            "comment" : ""
+          }
+        },
+        "includeAriaHeading" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "type" : {
+          "type" : "JSON_LITERAL",
+          "value" : "section"
+        },
+        "ariaRole" : {
+          "type" : "JSON_LITERAL",
+          "value" : ""
+        }
+      },
+      "eventMappings" : [ ],
+      "slot" : "ckwqci29405ok3e6z2x2p3i0k",
+      "definition" : {
+        "id" : "d356d14b6e293a3020a244b63d278d8f",
+        "type" : "MACROPONENT"
+      },
+      "overrides" : {
+        "composition" : [ {
+          "elementId" : "upcoming_today_empty_state",
+          "elementLabel" : "Upcoming - Today - Empty state",
+          "propertyValues" : {
+            "heading" : {
+              "type" : "STATE_BINDING",
+              "binding" : {
+                "address" : [ "translations", "emptyStateHeading" ]
+              }
+            },
+            "illustration" : {
+              "type" : "JSON_LITERAL",
+              "value" : "no-activities"
+            },
+            "alignment" : {
+              "type" : "JSON_LITERAL",
+              "value" : "vertical-centered"
+            },
+            "actions" : {
+              "type" : "JSON_LITERAL",
+              "value" : null
+            },
+            "content" : {
+              "type" : "STATE_BINDING",
+              "binding" : {
+                "address" : [ "translations", "todayEmptyStateContent" ]
+              }
+            }
+          },
+          "eventMappings" : [ ],
+          "slot" : "ckwqci29405ok3e6z2x2p3i0k",
+          "definition" : {
+            "id" : "6f51fcc407363e5a52ac464315713ee9",
+            "type" : "MACROPONENT"
+          },
+          "overrides" : null,
+          "isHidden" : {
+            "type" : "UNARY",
+            "operation" : {
+              "operand" : {
+                "type" : "STATE_BINDING",
+                "binding" : {
+                  "address" : [ "upcomingTodayEmptyStateVisible" ]
+                }
+              },
+              "operator" : "NOT"
+            }
+          },
+          "isHero" : false,
+          "extensionPoints" : [ ],
+          "isNonDestructive" : false,
+          "items" : [ ],
+          "styles" : {
+            "padding-top" : "20%",
+            "min-height" : "300px"
+          }
+        }, {
+          "elementId" : "upcoming_link_today",
+          "elementLabel" : "Upcoming - Today - Link set",
+          "propertyValues" : {
+            "indentLinks" : {
+              "type" : "JSON_LITERAL",
+              "value" : true
+            },
+            "size" : {
+              "type" : "JSON_LITERAL",
+              "value" : "md"
+            },
+            "heading" : {
+              "type" : "MAP_CONTAINER",
+              "container" : { }
+            },
+            "width" : {
+              "type" : "JSON_LITERAL",
+              "value" : "100%"
+            },
+            "variant" : {
+              "type" : "JSON_LITERAL",
+              "value" : "secondary"
+            },
+            "links" : {
+              "type" : "DATA_OUTPUT_BINDING",
+              "binding" : {
+                "address" : [ "upcoming_links_data_resource_today", "output", "links" ]
+              }
+            },
+            "minWidth" : {
+              "type" : "JSON_LITERAL",
+              "value" : "150"
+            },
+            "browseLink" : {
+              "type" : "MAP_CONTAINER",
+              "container" : { }
+            }
+          },
+          "eventMappings" : [ ],
+          "slot" : null,
+          "definition" : {
+            "id" : "b83fb1af6e8e84e024d4057df053038b",
+            "type" : "MACROPONENT"
+          },
+          "overrides" : null,
+          "isHidden" : {
+            "type" : "UNARY",
+            "operation" : {
+              "operand" : {
+                "type" : "STATE_BINDING",
+                "binding" : {
+                  "address" : [ "upcomingTodayLinkSetVisible" ]
+                }
+              },
+              "operator" : "NOT"
+            }
+          },
+          "isHero" : false,
+          "extensionPoints" : [ ],
+          "isNonDestructive" : false,
+          "items" : [ ],
+          "styles" : {
+            "padding-top" : "15px"
+          }
+        } ],
+        "layout" : {
+          "default" : {
+            "children" : null,
+            "isInline" : null,
+            "items" : [{"element_id":"upcoming_today_empty_state","styles":{}},{"element_id":"upcoming_link_today","styles":{}}],
+            "root" : null,
+            "rules" : null,
+            "styles" : {"flex-direction":"column"},
+            "templateId" : "5832fd4d53c31010e6bcddeeff7b12db",
+            "type" : "flex"
+          },
+          "version" : "3.0.0"
+        }
+      },
+      "isHidden" : {
+        "type" : "JSON_LITERAL",
+        "value" : null
+      },
+      "isHero" : false,
+      "extensionPoints" : [ ],
+      "isNonDestructive" : false,
+      "items" : [ ],
+      "styles" : {
+        "width" : "100%"
+      }
+    }, {
+      "elementId" : "ckwqcjiibbggaaffooddeggzjreeknkiiw",
+      "elementLabel" : "Tomorrow",
+      "propertyValues" : {
+        "ariaRegionHeadingLevel" : {
+          "type" : "JSON_LITERAL",
+          "value" : "1"
+        },
+        "ariaRegionName" : {
+          "type" : "TRANSLATION_LITERAL",
+          "value" : {
+            "code" : null,
+            "message" : "",
+            "comment" : ""
+          }
+        },
+        "includeAriaHeading" : {
+          "type" : "JSON_LITERAL",
+          "value" : false
+        },
+        "type" : {
+          "type" : "JSON_LITERAL",
+          "value" : "section"
+        },
+        "ariaRole" : {
+          "type" : "JSON_LITERAL",
+          "value" : ""
+        }
+      },
+      "eventMappings" : [ ],
+      "slot" : "ckwqcj81305on3e6z0n0oi3ax",
+      "definition" : {
+        "id" : "d356d14b6e293a3020a244b63d278d8f",
+        "type" : "MACROPONENT"
+      },
+      "overrides" : {
+        "composition" : [ {
+          "elementId" : "upcoming_tomorrow_empty_state",
+          "elementLabel" : "Upcoming - Tomorrow - Empty state",
+          "propertyValues" : {
+            "heading" : {
+              "type" : "STATE_BINDING",
+              "binding" : {
+                "address" : [ "translations", "emptyStateHeading" ]
+              }
+            },
+            "illustration" : {
+              "type" : "JSON_LITERAL",
+              "value" : "no-activities"
+            },
+            "alignment" : {
+              "type" : "JSON_LITERAL",
+              "value" : "vertical-centered"
+            },
+            "actions" : {
+              "type" : "JSON_LITERAL",
+              "value" : null
+            },
+            "content" : {
+              "type" : "STATE_BINDING",
+              "binding" : {
+                "address" : [ "translations", "tomorrowEmptyStateContent" ]
+              }
+            }
+          },
+          "eventMappings" : [ ],
+          "slot" : "ckwqcj81305on3e6z0n0oi3ax",
+          "definition" : {
+            "id" : "6f51fcc407363e5a52ac464315713ee9",
+            "type" : "MACROPONENT"
+          },
+          "overrides" : null,
+          "isHidden" : {
+            "type" : "CLIENT_TRANSFORM_SCRIPT",
+            "script" : {
+              "apiVersion" : "2.0.0",
+              "controllerElementId" : null,
+              "inlineScript" : null,
+              "scriptSysId" : "43cbab9f9718b1103c62322e6253af37",
+              "target" : null
+            }
+          },
+          "isHero" : false,
+          "extensionPoints" : [ ],
+          "isNonDestructive" : false,
+          "items" : [ ],
+          "styles" : {
+            "padding-top" : "20%",
+            "min-height" : "300px"
+          }
+        }, {
+          "elementId" : "upcoming_tomorrow_link_set",
+          "elementLabel" : "Upcoming - Tomorow - Link set",
+          "propertyValues" : {
+            "indentLinks" : {
+              "type" : "JSON_LITERAL",
+              "value" : true
+            },
+            "size" : {
+              "type" : "JSON_LITERAL",
+              "value" : "md"
+            },
+            "heading" : {
+              "type" : "MAP_CONTAINER",
+              "container" : { }
+            },
+            "width" : {
+              "type" : "JSON_LITERAL",
+              "value" : "100%"
+            },
+            "variant" : {
+              "type" : "JSON_LITERAL",
+              "value" : "secondary"
+            },
+            "links" : {
+              "type" : "DATA_OUTPUT_BINDING",
+              "binding" : {
+                "address" : [ "upcoming_links_data_resource_tomorrow", "output", "links" ]
+              }
+            },
+            "minWidth" : {
+              "type" : "JSON_LITERAL",
+              "value" : "150"
+            },
+            "browseLink" : {
+              "type" : "MAP_CONTAINER",
+              "container" : { }
+            }
+          },
+          "eventMappings" : [ ],
+          "slot" : null,
+          "definition" : {
+            "id" : "b83fb1af6e8e84e024d4057df053038b",
+            "type" : "MACROPONENT"
+          },
+          "overrides" : null,
+          "isHidden" : {
+            "type" : "CLIENT_TRANSFORM_SCRIPT",
+            "script" : {
+              "apiVersion" : "2.0.0",
+              "controllerElementId" : null,
+              "inlineScript" : null,
+              "scriptSysId" : "43cbab9f9718b1103c62322e6253af3b",
+              "target" : null
+            }
+          },
+          "isHero" : false,
+          "extensionPoints" : [ ],
+          "isNonDestructive" : false,
+          "items" : [ ],
+          "styles" : {
+            "padding-top" : "15px"
+          }
+        } ],
+        "layout" : {
+          "default" : {
+            "children" : null,
+            "isInline" : null,
+            "items" : [{"element_id":"upcoming_tomorrow_empty_state","styles":{}},{"element_id":"upcoming_tomorrow_link_set","styles":{}}],
+            "root" : null,
+            "rules" : null,
+            "styles" : {"flex-direction":"column"},
+            "templateId" : "5832fd4d53c31010e6bcddeeff7b12db",
+            "type" : "flex"
+          },
+          "version" : "3.0.0"
+        }
+      },
+      "isHidden" : {
+        "type" : "JSON_LITERAL",
+        "value" : null
+      },
+      "isHero" : false,
+      "extensionPoints" : [ ],
+      "isNonDestructive" : false,
+      "items" : [ ],
+      "styles" : {
+        "width" : "100%"
+      }
+    } ],
+    "layout" : null
+  },
+  "isHidden" : {
+    "type" : "JSON_LITERAL",
+    "value" : null
+  },
+  "isHero" : false,
+  "extensionPoints" : [ ],
+  "isNonDestructive" : false,
+  "items" : [ ],
+  "styles" : { }
+} ]</composition>
+        <da_relay_models/>
+        <data>[ {
+  "definition" : {
+    "id" : "99d5067eb7e23010965e56bf7e11a97d",
+    "type" : "TRANSFORM"
+  },
+  "dependencies" : { },
+  "elementId" : "upcoming_links_data_resource_today",
+  "elementLabel" : "Upcoming Links Data Resource - Today",
+  "eventMappings" : [ {
+    "eventMappingId" : "ckwqkustpaaddodddeggzzpnslchhp",
+    "isConfiguration" : false,
+    "offRowStorageId" : null,
+    "sourceEventApiName" : "sn_uxf.DATA_FETCH_SUCCEEDED",
+    "sourceEventCorrelationId" : null,
+    "sourceEventDefinition" : {
+      "apiName" : "sn_uxf.DATA_FETCH_SUCCEEDED",
+      "id" : null,
+      "type" : "UXEVENT"
+    },
+    "sourceEventSysId" : null,
+    "targets" : [ {
+      "broker" : null,
+      "clientScript" : null,
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : {
+        "apiName" : "sn_uxf.MACROPONENT_STATE_UPDATE_REQUESTED",
+        "payload" : {
+          "type" : "CLIENT_TRANSFORM_SCRIPT",
+          "script" : {
+            "apiVersion" : "1.0.0",
+            "controllerElementId" : null,
+            "inlineScript" : "/**\n* @param {params} params\n* @param {api} params.api\n* @param {any} params.event\n* @param {any} params.imports\n*/\nfunction evaluateEvent({api,event}) {\n\tlet count = 0;\n    const resource = api.data.upcoming_links_data_resource_today;\n    if (resource &amp;&amp; resource.output) {\n        count = resource.output.count;\n    }\n    return {\n        propName: 'upcomingTodayEmptyStateVisible',  value: count &gt; 0 ? false : true\n        };\n}",
+            "scriptSysId" : null,
+            "target" : null
+          }
+        },
+        "sysId" : "32408b42ff7a10109046e490703bf176"
+      },
+      "operation" : null,
+      "targetId" : "ckwqkustpaaddoeddeggzefffhaalar",
+      "type" : "EVENT"
+    }, {
+      "broker" : null,
+      "clientScript" : null,
+      "conditional" : null,
+      "declarativeAction" : null,
+      "event" : {
+        "apiName" : "sn_uxf.MACROPONENT_STATE_UPDATE_REQUESTED",
+        "payload" : {
+          "type" : "CLIENT_TRANSFORM_SCRIPT",
+          "script" : {
+            "apiVersion" : "1.0.0",
+            "controllerElementId" : null,
+            "inlineScript" : "/**\n* @param {params} params\n* @param {api} params.api\n* @param {any} params.event\n* @param {any} params.imports\n*/\nfunction evaluateEvent({\n    api,\n    event\n}) {\n    let count = 0;\n    const resource = api.data.upcoming_links_data_resource_today;\n    if (resource &amp;&amp; resource.output) {\n        count = resource.output.count;\n    }\n    return {\n        propName: 'upcomingTodayLinkSetVisible',\n        value: count &gt; 0 ? true : false\n    };\n}",
+            "scriptSysId" : null,
+            "target" : null
+          }
+        },
+        "sysId" : "32408b42ff7a10109046e490703bf176"
+      },
+      "operation" : null,
+      "targetId" : "ckwqlfzffiiaaeegfddeggzddcciifebqd",
+      "type" : "EVENT"
+    } ]
+  } ],
+  "inputValues" : {
+    "request" : {
+      "type" : "JSON_LITERAL",
+      "value" : {
+        "from" : "beginningOfToday",
+        "to" : "endOfToday"
+      }
+    }
+  },
+  "readEvaluationMode" : "EAGER"
+}, {
+  "definition" : {
+    "id" : "99d5067eb7e23010965e56bf7e11a97d",
+    "type" : "TRANSFORM"
+  },
+  "dependencies" : { },
+  "elementId" : "upcoming_links_data_resource_tomorrow",
+  "elementLabel" : "Upcoming Links Data Resource - Tomorrow",
+  "eventMappings" : [ ],
+  "inputValues" : {
+    "request" : {
+      "type" : "JSON_LITERAL",
+      "value" : {
+        "from" : "beginningOfTomorrow",
+        "to" : "endOfTomorrow"
+      }
+    }
+  },
+  "readEvaluationMode" : "EAGER"
+} ]</data>
+        <description/>
+        <dispatched_events/>
+        <ext_controller_dep/>
+        <extends display_value="Page Template">19be392623033300f4b4c50947bf65ba</extends>
+        <handled_events/>
+        <interactions/>
+        <interfaces/>
+        <internal_event_mappings>{
+  "MACROPONENT_READY" : [ {
+    "broker" : null,
+    "clientScript" : {
+      "sysId" : "4fcbab9f9718b1103c62322e6253af5e"
+    },
+    "conditional" : null,
+    "declarativeAction" : null,
+    "event" : null,
+    "operation" : null,
+    "targetId" : "ckybbkuojjhhaabbdvddfggtdmajxrdhh",
+    "type" : "CLIENT_SCRIPT"
+  } ]
+}</internal_event_mappings>
+        <layout>{
+  "default" : {
+    "children" : null,
+    "isInline" : null,
+    "items" : [{"element_id":"button_iconic_1","styles":{}},{"element_id":"container_2","styles":{}},{"element_id":"container_1","styles":{}},{"element_id":"viewport_cns","styles":{}}],
+    "root" : null,
+    "rules" : null,
+    "styles" : {"flex-direction":"column","width":"auto","height":"auto","display":"flex","margin-bottom":"40px"},
+    "templateId" : "5832fd4d53c31010e6bcddeeff7b12db",
+    "type" : "flex"
+  },
+  "version" : "3.0.0"
+}</layout>
+        <macroponent_dependencies/>
+        <name>Upcoming Task SNC</name>
+        <output_prop_mapping/>
+        <props>[ ]</props>
+        <required_translations>[ {
+  "message" : "Refresh upcoming tasks",
+  "comment" : ""
+}, {
+  "message" : "Today",
+  "comment" : ""
+}, {
+  "message" : "Tomorrow",
+  "comment" : ""
+}, {
+  "message" : "Upcoming",
+  "comment" : ""
+} ]</required_translations>
+        <root_component/>
+        <root_component_config>{ }</root_component_config>
+        <root_component_definition/>
+        <schema_version>1.0.0</schema_version>
+        <state_properties>[ {
+  "name" : "upcomingTodayEmptyStateVisible",
+  "label" : "upcomingTodayEmptyStateVisible",
+  "fieldType" : "boolean",
+  "valueType" : "boolean",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : false
+  }
+}, {
+  "name" : "upcomingTodayLinkSetVisible",
+  "label" : "upcomingTodayLinkSetVisible",
+  "fieldType" : "boolean",
+  "valueType" : "boolean",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : false
+  }
+}, {
+  "name" : "translations",
+  "label" : "translations",
+  "fieldType" : "json",
+  "valueType" : "json",
+  "shape" : "",
+  "description" : "",
+  "initialValue" : {
+    "type" : "JSON_LITERAL",
+    "value" : { }
+  }
+} ]</state_properties>
+        <sys_class_name>sys_ux_macroponent</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2023-08-02 14:02:41</sys_created_on>
+        <sys_id>4fcbab9f9718b1103c62322e6253af34</sys_id>
+        <sys_mod_count>3</sys_mod_count>
+        <sys_name>Upcoming Task SNC</sys_name>
+        <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
+        <sys_update_name>sys_ux_macroponent_4fcbab9f9718b1103c62322e6253af34</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2023-08-02 14:02:43</sys_updated_on>
+    </sys_ux_macroponent>
+    <sys_translated_text action="delete_multiple" query="documentkey=4fcbab9f9718b1103c62322e6253af34"/>
+</record_update>
