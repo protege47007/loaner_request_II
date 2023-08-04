@@ -17,14 +17,14 @@
         <override_menu_roles>false</override_menu_roles>
         <query>active=true^EQ</query>
         <report/>
-        <roles/>
+        <roles>x_1102749_loaner_r.admin</roles>
         <sys_class_name>sys_app_module</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2023-08-01 10:01:40</sys_created_on>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
         <sys_id>ee0be90f979071103c62322e6253af1b</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_mod_count>2</sys_mod_count>
         <sys_name>Open</sys_name>
         <sys_overrides/>
         <sys_package display_value="Loaner Request" source="x_1102749_loaner_r">76e969cb979071103c62322e6253af99</sys_package>
@@ -32,7 +32,7 @@
         <sys_scope display_value="Loaner Request">76e969cb979071103c62322e6253af99</sys_scope>
         <sys_update_name>sys_app_module_ee0be90f979071103c62322e6253af1b</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2023-08-02 14:34:11</sys_updated_on>
+        <sys_updated_on>2023-08-04 12:52:49</sys_updated_on>
         <timeline_page/>
         <title>Open</title>
         <uncancelable>false</uncancelable>
