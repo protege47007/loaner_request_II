@@ -12,11 +12,11 @@
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="End date" mandatory="true" max_length="40" name="end_date" type="calendar_date_time"/>
-        <element attributes="edge_encryption_enabled=true" choice="3" default="laptop" label="Item type" max_length="40" name="item_type" type="string">
+        <element attributes="edge_encryption_enabled=true" choice="3" default="mobile_phone" label="Item type" max_length="40" name="item_type" type="string">
             <choice>
-                <element inactive_on_update="false" label="Mobile Phone" sequence="0" value="mobile_phone"/>
-                <element inactive_on_update="false" label="Laptop" sequence="1" value="laptop"/>
-                <element inactive_on_update="false" label="Projector" sequence="2" value="projector"/>
+                <element inactive_on_update="false" label="Mobile Phone" sequence="0" value="cmdb_ci_mobile_device"/>
+                <element inactive_on_update="false" label="Laptop" sequence="1" value="cmdb_ci_computer"/>
+                <element inactive_on_update="false" label="Projector" sequence="2" value="cmdb_ci_projector"/>
             </choice>
         </element>
         <element attributes="edge_encryption_enabled=true" label="Overdue reminder" max_length="40" name="last_overdue_reminder" type="glide_date_time"/>
